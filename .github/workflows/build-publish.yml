@@ -80,9 +80,9 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=branch
-            type=ref,event=tag
-            type=sha
+            type=ref,event=branch,suffix=-${{ matrix.variant }}
+            type=ref,event=tag,suffix=-${{ matrix.variant }}
+            type=sha,suffix=-${{ matrix.variant }}
             type=raw,${{ steps.dockerfile_regex.outputs.version }}-${{ matrix.variant }}
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
