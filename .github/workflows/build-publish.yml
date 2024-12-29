@@ -70,9 +70,7 @@ jobs:
         id: dockerfile_regex
         shell: bash
         run: |
-          version=$(perl -ne 'm/FROM .+:((?:\d+\.?){3})-(.+)/ && print "$1"' Dockerfile)
-          variant=$(perl -ne 'm/FROM .+:((?:\d+\.?){3})-(.+)/ && print "$2"' Dockerfile)
-          echo Base image version: $version-$variant
+          version=$(perl -ne 'm/FROM .+:((?:\d+\.?){3})-${{ matrix.variant }}/ && print "$1"' ${{ matrix.variant }}.Dockerfile)          echo Base image version: $version-$variant
           echo "version=$version" >> $GITHUB_OUTPUT
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
