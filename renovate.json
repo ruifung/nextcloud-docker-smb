@@ -3,13 +3,11 @@
   "packageRules": [
     {
       "matchManagers":  ["github-actions"],
-      "automerge": true,
-      "platformAutomerge": true
+      "automerge": true
     },
     {
       "matchPackageNames": ["nextcloud"],
-      "automerge": true,
-      "platformAutomerge": true
+      "automerge": true
     }
   ],
   "extends": [
