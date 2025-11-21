@@ -5,6 +5,11 @@
       "matchManagers":  ["github-actions"],
       "automerge": true,
       "platformAutomerge": true
+    },
+    {
+      "matchPackageNames": ["nextcloud"],
+      "automerge": true,
+      "platformAutomerge": true
     }
   ],
   "extends": [
