@@ -1,2 +1,2 @@
-FROM nextcloud:34.0.3-fpm
+FROM nextcloud:34.0.4-fpm
 RUN apt-get update && apt-get install -y smbclient libsmbclient-dev && pecl install smbclient && docker-php-ext-enable smbclient && apt-get autoclean && rm -rf /var/lib/apt/lists/*
